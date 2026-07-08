@@ -1,0 +1,398 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Las Mejores Ofertas en Internet Hogar y TV!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0033a0; /* Azul Corporativo */
+            --accent-color: #ff6b00;  /* Naranja de alta conversión para botones */
+            --bg-light: #f4f6f9;
+            --text-dark: #1a1a1a;
+            --text-muted: #666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Barra de Navegación */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .btn-top-call {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        /* Sección Principal (Hero) */
+        .hero {
+            background: linear-gradient(135deg, #002270 0%, #0044cc 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .hero .badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Sección de Planes */
+        .planes-section {
+            padding: 60px 20px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .planes-section h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .planes-section .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .grid-planes {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card-plan {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .card-plan.destacado {
+            border: 2px solid var(--accent-color);
+        }
+
+        .card-plan.destacado .ribbon {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .plan-header h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            margin: 20px 0;
+        }
+
+        .plan-price .monto {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .plan-price .periodo {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .plan-features li i {
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+
+        /* Botones de Acción */
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: white;
+            display: block;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: #e05e00;
+        }
+
+        /* Sección Beneficios Limpia */
+        .beneficios {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .beneficios h2 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .beneficio-item i {
+            font-size: 35px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .beneficio-item h4 {
+            margin-bottom: 5px;
+        }
+
+        .beneficio-item p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Ajustes para Pantallas Grandes */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 42px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">PROMO HOGAR</a>
+            <a href="tel:+50680000000" class="btn-top-call"><i class="fas fa-phone-alt"></i> Llamar Gratis</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <span class="badge">Promoción por tiempo limitado</span>
+            <h1>¡Disfruta de la Red Más Estable!</h1>
+            <p>Conéctate con la velocidad ideal para teletrabajo, gaming y streaming en alta definición sin interrupciones.</p>
+        </div>
+    </section>
+
+    <section class="planes-section">
+        <h2>Elige el Plan Perfecto para tu Hogar</h2>
+        <p class="subtitle">Instalación rápida y asesoría inmediata por WhatsApp</p>
+
+        <div class="grid-planes">
+            <div class="card-plan">
+                <div class="plan-header">
+                    <h3>Internet 200 Megas</h3>
+                    <p style="color: var(--text-muted); font-size: 13px;">Ideal para navegación y redes</p>
+                </div>
+                <div class="plan-price">
+                    <span class="monto">₡18,500</span><span class="periodo">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> 125 Mbps internet ilimitado</li>
+                    <li><i class="fas fa-check"></i> Ideal para 3-4 dispositivos</li>
+                    <li><i class="fas fa-check"></i> Router de última generación incluido</li>
+                </ul>
+                <a href="https://wa.me/50660983379?text=Hola,%20quiero%20información%20del%20plan%20de%20125%20Megas" target="_blank" class="btn-cta">Lo Quiero por WhatsApp</a>
+            </div>
+
+            <div class="card-plan destacado">
+                <div class="ribbon">El Más Vendido</div>
+                <div class="plan-header">
+                    <h3>Internet 350 Megas</h3>
+                    <p style="color: var(--text-muted); font-size: 13px;">Diversión completa en familia</p>
+                </div>
+                <div class="plan-price">
+                    <span class="monto">₡19.500</span><span class="periodo">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> 350 Mbps de internet ilimitado</li>
+                    <li><i class="fas fa-check"></i> Perfecto para streaming 4K y videojuegos</li>
+                    <li><i class="fas fa-check"></i> Soporte técnico prioritario</li>
+                </ul>
+                <a href="https://wa.me/50680000000?text=Hola,%20quiero%20información%20del%20plan%20de%20350%20Megas%" target="_blank" class="btn-cta">Lo Quiero por WhatsApp</a>
+            </div>
+
+            <div class="card-plan">
+                <div class="plan-header">
+                    <h3>Internet 250 Megas + TV</h3>
+                    <p style="color: var(--text-muted); font-size: 13px;">Máxima potencia sin límites</p>
+                </div>
+                <div class="plan-price">
+                    <span class="monto">₡21.500</span><span class="periodo">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> 250 Mbps Velocidad Ultra</li>
+                    <li><i class="fas fa-check"></i> Canales HD avanzados premium</li>
+                    <li><i class="fas fa-check"></i> Ideal para múltiples descargas masivas</li>
+                    <li><i class="fas fa-check"></i> Conexión garantizada para todo el hogar</li>
+                </ul>
+                <a href="https://wa.me/50660983379?text=Hola,%20quiero%20información%20del%20plan%20de%20250%20Megas%20con%20TV" target="_blank" class="btn-cta">Lo Quiero por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="beneficios">
+        <h2>¿Por qué elegir nuestro servicio?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-item">
+                <i class="fas fa-bolt"></i>
+                <h4>Internet rápido</h4>
+                <p>Estabilidad garantizada de subida y bajada sin pérdidas de señal.</p>
+            </div>
+            <div class="beneficio-item">
+                <i class="fas fa-headset"></i>
+                <h4>Asesoría Directa</h4>
+                <p>Te guiamos durante todo el proceso de contratación de forma personalizada.</p>
+            </div>
+            <div class="beneficio-item">
+                <i class="fas fa-user-check"></i>
+                <h4>Trámite Sencillo</h4>
+                <p>Sin papeleos complejos, verificamos tu cobertura de inmediato.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/50660983379?text=Hola,%20deseo%20consultar%20la%20cobertura%20en%20mi%20zona" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Distribuidor Autorizado de Servicios Residenciales. Todos los derechos reservados, 2026.</p>
+        <p style="margin-top: 5px; font-size: 10px;">Las marcas comerciales y logotipos son propiedad de sus respectivos dueños y se usan con fines ilustrativos.</p>
+    </footer>
+
+</body>
+</html>
